@@ -57,5 +57,29 @@ class PizzaMenuTests: XCTestCase {
         // Then
         XCTAssertEqual(expectedValue, actualValue)
     }
+    
+    func testAllergenList() {
+        // Given
+        let pizza = Pizza(name: "peperoniDouble", base: pepperoniStuffedCrust, toppings: [tomatoSauce, pepperoni])
+        
+        // When
+        let expectedValue = ["Gluten","Mustard"]
+        let actualValue = pizza.allAllergen()
+        
+        // Then
+        XCTAssertEqual(expectedValue, actualValue)
+    }
+    
+    func testToppingType() {
+        // Given
+        let pizza = Pizza(name: "peperoniDouble", base: pepperoniStuffedCrust, toppings: [tomatoSauce, pepperoni])
+        
+        // When
+        let expectedValue = ["Tomato sauce", "Pepperoni"]
+        let actualValue = pizza.getAllTopping()
+        
+        // Then
+        XCTAssertEqual(expectedValue, actualValue)
+    }
 
 }
